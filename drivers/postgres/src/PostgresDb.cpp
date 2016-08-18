@@ -207,7 +207,7 @@ public:
         NGREST_ASSERT(arg < paramCount, "Invalid arg number: " + toString(arg) + " of " + toString(paramCount));
 
         const size_t length = value.size() + 1;
-        paramValues[arg] = pool.putCString(value.c_str(), length);
+        paramValues[arg] = pool.putCString(value.c_str(), length, false);
         paramLengths[arg] = static_cast<int>(length);
     }
 
